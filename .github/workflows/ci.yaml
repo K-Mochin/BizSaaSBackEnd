@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up environment
+        run: echo "Prepare build environment"
+
+      - name: Build
+        run: |
+          echo "Run your project build command here"
+          # 例: dotnet build, npm install && npm run build, ./gradlew build
