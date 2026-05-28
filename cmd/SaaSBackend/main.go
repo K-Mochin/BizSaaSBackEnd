@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"github.com/aws/aws-lambda-go/lambda"
+)
+
+func hello() (string, error) {
+	return "Hello λ!", nil
+}
 
 func main() {
-    fmt.Println("Hello world")
+	entry()
+	lambda.Start(hello)
 }
